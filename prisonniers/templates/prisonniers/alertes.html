@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Alertes - CarceralNet</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#eef2f7;
+    margin:30px;
+}
+
+h1{
+    color:#dc2626;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-bottom:30px;
+}
+
+th{
+    background:#dc2626;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+a{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🚨 Centre des alertes</h1>
+
+<a href="/">⬅ Retour au tableau de bord</a>
+
+<h2 style="margin-top:30px;">🔴 Libérations aujourd'hui</h2>
+
+<table>
+
+<tr>
+<th>Nom</th>
+<th>Prénom</th>
+<th>Cellule</th>
+<th>Date sortie</th>
+</tr>
+
+{% for p in aujourdhui %}
+<tr>
+<td>{{ p.nom }}</td>
+<td>{{ p.prenom }}</td>
+<td>{{ p.cellule }}</td>
+<td>{{ p.date_sortie }}</td>
+</tr>
+{% empty %}
+<tr>
+<td colspan="4">Aucun prisonnier aujourd'hui.</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<h2>⚠ Prisonniers en retard</h2>
+
+<table>
+
+<tr>
+<th>Nom</th>
+<th>Prénom</th>
+<th>Cellule</th>
+<th>Date sortie</th>
+</tr>
+
+{% for p in retard %}
+<tr>
+<td>{{ p.nom }}</td>
+<td>{{ p.prenom }}</td>
+<td>{{ p.cellule }}</td>
+<td>{{ p.date_sortie }}</td>
+</tr>
+{% empty %}
+<tr>
+<td colspan="4">Aucun retard.</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>

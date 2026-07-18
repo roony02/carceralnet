@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+
+<title>{{ prisonnier.nom }}</title>
+
+<style>
+
+body{
+
+background:#eef2f7;
+
+font-family:Arial;
+
+padding:30px;
+
+}
+
+.card{
+
+max-width:900px;
+
+margin:auto;
+
+background:white;
+
+border-radius:15px;
+
+box-shadow:0 0 15px gray;
+
+padding:30px;
+
+}
+
+.photo{
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:5px solid #2563eb;
+
+}
+
+table{
+
+width:100%;
+
+margin-top:20px;
+
+border-collapse:collapse;
+
+}
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #ddd;
+
+}
+
+h1{
+
+color:#2563eb;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:12px 20px;
+
+background:#2563eb;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<center>
+
+{% if prisonnier.photo %}
+
+<img class="photo" src="{{ prisonnier.photo.url }}">
+
+{% endif %}
+
+<h1>{{ prisonnier.nom }} {{ prisonnier.prenom }}</h1>
+
+</center>
+
+<table>
+
+<tr><td><b>Numéro</b></td><td>{{ prisonnier.numero_prisonnier }}</td></tr>
+
+<tr><td><b>Postnom</b></td><td>{{ prisonnier.postnom }}</td></tr>
+
+<tr><td><b>Nationalité</b></td><td>{{ prisonnier.nationalite }}</td></tr>
+
+<tr><td><b>État civil</b></td><td>{{ prisonnier.etat_civil }}</td></tr>
+
+<tr><td><b>Cellule</b></td><td>{{ prisonnier.cellule }}</td></tr>
+
+<tr><td><b>Motif</b></td><td>{{ prisonnier.motif }}</td></tr>
+
+<tr><td><b>Date d'entrée</b></td><td>{{ prisonnier.date_entree }}</td></tr>
+
+<tr><td><b>Date de sortie</b></td><td>{{ prisonnier.date_sortie }}</td></tr>
+
+<tr><td><b>Statut</b></td><td>{{ prisonnier.statut }}</td></tr>
+
+</table>
+
+<a class="btn" href="/carte/{{ prisonnier.id }}/">
+🪪 Imprimer la carte
+</a>
+
+<a class="btn" href="/">
+⬅ Retour au tableau de bord
+</a>
+
+</div>
+
+</body>
+</html>
