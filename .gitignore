@@ -5,3 +5,14 @@ db.sqlite3
 .env
 media/
 staticfiles/
+venv/
+__pycache__/
+*.pyc
+.env
+
+db.sqlite3
+
+media/
+photos/
+documents/
+*.mp3
