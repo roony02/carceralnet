@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-change-this-key'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+AALLOWED_HOSTS = ['carceralnet2.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
