@@ -30,7 +30,7 @@ from .models import Prisonnier
 # TABLEAU DE BORD
 # ==========================
 
-@login_required(login_url='login')
+@login_required(login_url='/admin/login/')
 def dashboard(request):
 
     total = Prisonnier.objects.count()
