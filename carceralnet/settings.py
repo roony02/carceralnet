@@ -6,7 +6,11 @@ SECRET_KEY = 'django-insecure-change-this-key'
 
 DEBUG = True
 
-AALLOWED_HOSTS = ['carceralnet2.onrender.com']
+ALLOWED_HOSTS = [
+    'carceralnet2.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -49,12 +53,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'carceralnet.wsgi.application'
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -71,6 +77,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'Africa/Kinshasa'
@@ -78,18 +85,24 @@ TIME_ZONE = 'Africa/Kinshasa'
 USE_I18N = True
 
 USE_TZ = True
+
+
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "prisonniers" / "static",
+    BASE_DIR / 'prisonniers' / 'static',
 ]
 
+
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = BASE_DIR / 'media'
 
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 LOGIN_URL = "login"
 
